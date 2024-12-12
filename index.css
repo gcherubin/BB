@@ -1,0 +1,304 @@
+:root {
+  --default-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC",
+    "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei",
+    "Source Han Sans CN", sans-serif;
+}
+
+/* Base Styles */
+.main-container {
+  width: 390px;
+  margin: 0 auto;
+  background: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-container,
+.main-container * {
+  box-sizing: border-box;
+}
+
+/* Card Section */
+.card-base {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 24px;
+  background: #ffffff;
+}
+
+/* Top Section with Radio */
+.title {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Radio Buttons */
+.radio-button input[type="radio"] {
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border: 1px solid #000000;
+  border-radius: 12px;
+  margin: 0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: #ffffff;
+  position: relative;
+}
+
+.radio-button input[type="radio"]:checked {
+  background: #186aff;
+  border: 2px solid #186aff;
+}
+
+.radio-button input[type="radio"]:checked::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #ffffff;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+}
+
+/* Scheme (Card/PayPal) */
+.scheme {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.icon-card {
+  width: 40px;
+  height: 24px;
+  background: #ffffff;
+  border: 1px solid #949494;
+  border-radius: 4px;
+}
+
+.graphic {
+  width: 15.429px;
+  height: 12px;
+  margin: 6px 0 0 12.286px;
+  background: url(./assets/images/260d9746-ddb3-48cd-8120-6be95521ed1b.png) no-repeat center;
+  background-size: cover;
+}
+
+/* Form Content */
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+/* Text Fields */
+.text-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+.labels {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  color: #000000;
+  font-family: SF Pro, var(--default-font-family);
+  font-size: 14px;
+  font-weight: 510;
+  line-height: 20px;
+}
+
+cssCopy/* Text Field Container */
+.text-field {
+  position: relative;
+  width: 100%;
+}
+
+/* Input Container */
+.inputs {
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 48px;
+  background: #ffffff;
+  border: 1px solid #949494;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+/* Input Element */
+.input {
+  width: 100%;
+  height: 100%;
+  padding: 0 16px;
+  color: #000000;
+  font-family: SF Pro, var(--default-font-family);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  background: transparent;
+  border: none;
+  outline: none;
+  position: relative;
+  z-index: 2;
+}
+
+/* Placeholder */
+.input::placeholder {
+  color: #b0b0b0;
+}
+
+/* Focus State with Blue Border and Outline Effect */
+.inputs:focus-within {
+  border: 1px solid #186aff;
+  box-shadow: 0 0 0 4px #91b2ee;
+}
+
+/* Card Number Input Special Width */
+.text-field:has(.schemes) .input {
+  padding-right: 120px; /* Space for card icons */
+}
+
+/* Group Fields (Expiry & CVV) */
+.group .text-field .inputs {
+  width: 100%;
+}
+
+/* Error State */
+.inputs.error {
+  border-color: #ff3b30;
+  box-shadow: 0 0 0 4px rgba(255, 59, 48, 0.2);
+}
+
+/* Success State */
+.inputs.success {
+  border-color: #34c759;
+  box-shadow: 0 0 0 4px rgba(52, 199, 89, 0.2);
+}
+
+/* Card Icons */
+.schemes {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: absolute;
+  right: 16px;
+}
+
+.visa-icon,
+.mastercard-icon,
+.amex-icon,
+.diners-icon {
+  width: 26px;
+  height: 16px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 1;
+  transition: opacity 0.2s ease;
+}
+
+.schemes div.inactive {
+  opacity: .5;
+}
+
+.visa-icon { background-image: url(./assets/images/b9789df8-d21e-4735-bf71-bd0450e5b0d4.png); }
+.mastercard-icon { background-image: url(./assets/images/473f0289-2628-44e7-b147-76485749ce7f.png); }
+.amex-icon { background-image: url(./assets/images/b7320a7f-29ee-417a-8775-d9cd66c47c78.png); }
+.diners-icon { background-image: url(./assets/images/0bdc8239-bf0b-43d8-819e-0eac5aa7672f.png); }
+
+/* Group (Expiry and CVV) */
+.group {
+  display: flex;
+  gap: 20px;
+}
+
+.group .text-field {
+  flex: 1;
+}
+
+.icon-cvv {
+  width: 26px;
+  height: 21px;
+  background: url(./assets/images/CVV.svg) no-repeat center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: absolute;
+  right: 16px;
+}
+
+/* Pay Button */
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 12px 20px;
+  background: #b0b0b0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.button:enabled {
+  background: #186aff;
+}
+
+.pay {
+  color: #ffffff;
+  font-family: SF Pro, var(--default-font-family);
+  font-size: 16px;
+  font-weight: 510;
+  line-height: 24px;
+}
+
+/* PayPal Section */
+.paypal {
+  border-top: 1px solid #dddddd;
+}
+
+.apm-base {
+  padding: 24px;
+}
+
+.icon-pm-paypal-medium {
+  width: 40px;
+  height: 24px;
+  background: url(./assets/images/53db2bfb-29a3-42df-81bd-dfbab0c1e099.png) no-repeat center;
+  background-size: cover;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 400px) {
+  .main-container {
+    width: 100%;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+  
+  .group {
+    flex-direction: column;
+  }
+  
+  .card-base {
+    padding: 16px;
+  }
+}

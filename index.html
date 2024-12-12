@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payment Interface</title>
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=SF+Pro:wght@400;510&display=swap" />
+    <link rel="stylesheet" href="index.css" />
+
+  </head>
+  <body>
+    <div class="main-container">
+      <!-- Card Payment Section -->
+      <div class="card">
+        <div class="card-base">
+          <!-- Payment Method Selection -->
+          <div class="top">
+            <div class="title">
+              <div class="radio-button">
+                <input type="radio" id="card-radio" name="payment-method" checked>
+              </div>
+              <div class="scheme">
+                <div class="icon-card"><div class="graphic"></div></div>
+                <span class="label">Card</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Form Fields -->
+          <div class="content">
+            <!-- Cardholder Name -->
+            <div class="text-field">
+              <div class="labels">
+                <span class="label">Cardholder name</span>
+              </div>
+              <div class="inputs">
+                <input class="input" placeholder="Jordan Smith" />
+              </div>
+            </div>
+
+            <!-- Card Number -->
+            <div class="text-field">
+              <div class="labels">
+                <span class="label">Card number</span>
+              </div>
+              <div class="inputs">
+                <input class="input" placeholder="1234 1234 1234 1234" />
+                <div class="schemes">
+                  <div class="visa-icon"></div>
+                  <div class="mastercard-icon"></div>
+                  <div class="amex-icon"></div>
+                  <div class="diners-icon"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Expiry and CVV -->
+            <div class="group">
+              <div class="text-field">
+                <div class="labels">
+                  <span class="label">Expiry date</span>
+                </div>
+                <div class="inputs">
+                  <input class="input" placeholder="MM/YY" />
+                </div>
+              </div>
+              <div class="text-field">
+                <div class="labels">
+                  <span class="label">Security code</span>
+                </div>
+                <div class="inputs">
+                  <input class="input" placeholder="CVV" />
+                  <div class="icon-cvv"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pay Button -->
+          <button class="button"><span class="pay">Pay</span></button>
+        </div>
+      </div>
+
+      <!-- PayPal Section -->
+      <div class="paypal">
+        <div class="apm-base">
+          <div class="title">
+            <div class="radio-button">
+              <input type="radio" id="paypal-radio" name="payment-method">
+            </div>
+            <div class="scheme">
+              <div class="icon-pm-paypal-medium"></div>
+              <span class="label">PayPal</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
