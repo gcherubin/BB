@@ -7,6 +7,21 @@
     
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=SF+Pro:wght@400;510&display=swap" />
     <link rel="stylesheet" href="index.css" />
+    <script defer src="index.js"></script>
+
+    <style>
+      .schemes div {
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      .schemes div.hidden {
+        opacity: 0;
+        transform: scale(0.8);
+        pointer-events: none;
+      }
+    </style>
 
   </head>
   <body>
